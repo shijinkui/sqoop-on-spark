@@ -15,7 +15,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.apache</groupId>
@@ -87,8 +88,8 @@ limitations under the License.
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compile.source>1.6</maven.compile.source>
-    <maven.compile.target>1.6</maven.compile.target>
+    <maven.compile.source>1.8</maven.compile.source>
+    <maven.compile.target>1.8</maven.compile.target>
     <commons-cli.version>1.2</commons-cli.version>
     <commons-dbcp.version>1.4</commons-dbcp.version>
     <commons-lang.version>2.5</commons-lang.version>
@@ -109,7 +110,7 @@ limitations under the License.
     <tomcat.major.version>6</tomcat.major.version>
     <tomcat.minor.version>0.37</tomcat.minor.version>
     <tomcat.version>${tomcat.major.version}.${tomcat.minor.version}</tomcat.version>
-    <jdbc.mysql.version>5.1.23</jdbc.mysql.version>
+    <jdbc.mysql.version>5.1.38</jdbc.mysql.version>
     <jdbc.postgresql.version>9.1-901.jdbc4</jdbc.postgresql.version>
     <jdbc.oracle.version>11.2.0.3</jdbc.oracle.version>
     <jdbc.sqlserver.version>4.0</jdbc.sqlserver.version>
@@ -122,14 +123,13 @@ limitations under the License.
     <kafka.version>0.8.1.1</kafka.version>
     <avro.version>1.7.7</avro.version>
     <jcommander.version>1.27</jcommander.version>
-    <scala.minor.version>2.10</scala.minor.version>
-    <spark.version>1.3.0</spark.version>
+    <scala.minor.version>2.11</scala.minor.version>
+    <spark.version>1.6.1</spark.version>
     <netty.version>4.0.23.Final</netty.version>
     <kryo.version>2.22</kryo.version>
   </properties>
 
   <dependencies>
-
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
@@ -362,12 +362,11 @@ limitations under the License.
         <artifactId>sqoop-tomcat</artifactId>
         <version>${project.version}</version>
       </dependency>
-	  <dependency>
+      <dependency>
         <groupId>org.apache.hadoop</groupId>
         <artifactId>hadoop-client</artifactId>
         <version>${hadoop.2.version}</version>
         <scope>provided</scope>
-				
         <exclusions>
           <exclusion>
             <groupId>org.mortbay.jetty</groupId>
@@ -392,21 +391,18 @@ limitations under the License.
         <artifactId>hadoop-mapreduce-client-core</artifactId>
         <version>${hadoop.2.version}</version>
         <scope>provided</scope>
-				
       </dependency>
       <dependency>
         <groupId>org.apache.hadoop</groupId>
         <artifactId>hadoop-mapreduce-client-jobclient</artifactId>
         <version>${hadoop.2.version}</version>
         <scope>provided</scope>
-				
       </dependency>
       <dependency>
         <groupId>org.apache.hadoop</groupId>
         <artifactId>hadoop-minicluster</artifactId>
         <version>${hadoop.2.version}</version>
         <scope>provided</scope>
-				
       </dependency>
       <dependency>
         <groupId>org.apache.hadoop</groupId>
@@ -494,25 +490,20 @@ limitations under the License.
         <artifactId>commons-cli</artifactId>
         <version>${commons-cli.version}</version>
       </dependency>
-       <dependency>
-         <groupId>commons-io</groupId>
-         <artifactId>commons-io</artifactId>
-         <version>${commons-io.version}</version>
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>${commons-io.version}</version>
       </dependency>
       <dependency>
         <groupId>commons-codec</groupId>
         <artifactId>commons-codec</artifactId>
         <version>${commons-codec.version}</version>
       </dependency>
-		  <dependency>
-		     <groupId>javax.servlet</groupId>
-		     <artifactId>servlet-api</artifactId>
-		    <version>${servlet.version}</version>
-		 </dependency>
       <dependency>
-        <groupId>org.testng</groupId>
-        <artifactId>testng</artifactId>
-        <version>${testng.version}</version>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>${servlet.version}</version>
       </dependency>
       <dependency>
         <groupId>log4j</groupId>
@@ -595,6 +586,11 @@ limitations under the License.
         <version>${joda.version}</version>
       </dependency>
       <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>${testng.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-all</artifactId>
         <version>${mockito.version}</version>
@@ -642,52 +638,48 @@ limitations under the License.
         <artifactId>hadoop-common</artifactId>
         <version>${hadoop.2.version}</version>
         <scope>provided</scope>
-				
       </dependency>
       <dependency>
-       <groupId>org.apache.avro</groupId>
-       <artifactId>avro</artifactId>
-       <version>${avro.version}</version>
-     </dependency>
-     <dependency>
-       <groupId>org.apache.spark</groupId>
-       <artifactId>spark-core_${scala.minor.version}</artifactId>
-       <version>${spark.version}</version>
-       <scope>provided</scope>
-			 
-     </dependency>
-     <dependency>
-       <groupId>org.apache.spark</groupId>
-       <artifactId>spark-yarn_${scala.minor.version}</artifactId>
-       <version>${spark.version}</version>
-       <scope>provided</scope>
-			 
-     </dependency>
-     <dependency>
-       <groupId>org.apache.spark</groupId>
-       <artifactId>spark-streaming_${scala.minor.version}</artifactId>
-       <version>${spark.version}</version>
-       <scope>provided</scope>
-			 
-     </dependency>
-     <dependency>
-       <groupId>org.apache.spark</groupId>
-       <artifactId>spark-streaming-kafka_${scala.minor.version}</artifactId>
-       <version>${spark.version}</version>
-       <scope>provided</scope>
-			 
-     </dependency>
-	 <dependency>
-	 	<groupId>com.esotericsoftware.kryo</groupId>
-	 	<artifactId>kryo</artifactId>
+        <groupId>org.apache.avro</groupId>
+        <artifactId>avro</artifactId>
+        <version>${avro.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.spark</groupId>
+        <artifactId>spark-core_${scala.minor.version}</artifactId>
+        <version>${spark.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.spark</groupId>
+        <artifactId>spark-yarn_${scala.minor.version}</artifactId>
+        <version>${spark.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.spark</groupId>
+        <artifactId>spark-streaming_${scala.minor.version}</artifactId>
+        <version>${spark.version}</version>
+        <scope>provided</scope>
+
+      </dependency>
+      <dependency>
+        <groupId>org.apache.spark</groupId>
+        <artifactId>spark-streaming-kafka_${scala.minor.version}</artifactId>
+        <version>${spark.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.esotericsoftware.kryo</groupId>
+        <artifactId>kryo</artifactId>
         <version>${kryo.version}</version>
-	 </dependency>
-     <dependency>
-       <groupId>io.netty</groupId>
-       <artifactId>netty-all</artifactId>
-       <version>${netty.version}</version>
-     </dependency>	 
-   </dependencies>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-all</artifactId>
+        <version>${netty.version}</version>
+      </dependency>
+    </dependencies>
   </dependencyManagement>
 
   <modules>
@@ -723,7 +715,7 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>2.3.2</version>
+          <version>3.5.1</version>
           <configuration>
             <source>${maven.compile.source}</source>
             <target>${maven.compile.target}</target>
@@ -751,9 +743,8 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>2.3.2</version>
+          <version>2.6</version>
         </plugin>
-
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
@@ -773,31 +764,28 @@ limitations under the License.
             </properties>
           </configuration>
         </plugin>
-
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-failsafe-plugin</artifactId>
           <version>2.18.1</version>
         </plugin>
-		<plugin>
-		   <groupId>net.alchim31.maven</groupId>
-		   <artifactId>scala-maven-plugin</artifactId>
-		   <version>3.2.0</version>
-		     <executions>
-		       <execution>
-		         <id>scala-compile-first</id>
-		         <phase>process-resources</phase>
-		           <goals>
-		             <goal>add-source</goal>
-		             <goal>compile</goal>
-		           </goals>
-		       </execution>
-		    </executions>
-		  </plugin>
+        <plugin>
+          <groupId>net.alchim31.maven</groupId>
+          <artifactId>scala-maven-plugin</artifactId>
+          <version>3.2.0</version>
+          <executions>
+            <execution>
+              <id>scala-compile-first</id>
+              <phase>process-resources</phase>
+              <goals>
+                <goal>add-source</goal>
+                <goal>compile</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
     </pluginManagement>
-
-
   </build>
 
   <!-- All reports might be generated using mvn site command -->
@@ -807,14 +795,14 @@ limitations under the License.
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>cobertura-maven-plugin</artifactId>
-        <version>2.5.2</version>
+        <version>3.4</version>
       </plugin>
 
       <!-- Turning off standard reports as they collide with sphinx -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.4</version>
+        <version>2.9</version>
         <reportSets>
           <reportSet>
             <reports/>

@@ -7,14 +7,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.sqoop.common.Direction;
 import org.apache.sqoop.driver.Driver;
-import org.apache.sqoop.model.MConfigList;
-import org.apache.sqoop.model.MConnector;
-import org.apache.sqoop.model.MDriverConfig;
-import org.apache.sqoop.model.MFromConfig;
-import org.apache.sqoop.model.MJob;
-import org.apache.sqoop.model.MLink;
-import org.apache.sqoop.model.MLinkConfig;
-import org.apache.sqoop.model.MToConfig;
+import org.apache.sqoop.model.*;
 import org.apache.sqoop.repository.RepositoryManager;
 
 public class SqoopJDBCHDFSJob {

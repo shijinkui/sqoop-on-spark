@@ -1,9 +1,5 @@
 package org.apache.sqoop.submission.spark;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.spark.SparkConf;
@@ -22,6 +18,8 @@ import org.apache.sqoop.job.etl.PartitionerContext;
 import org.apache.sqoop.schema.Schema;
 import org.apache.sqoop.utils.ClassUtils;
 
+import java.util.List;
+
 public class SqoopSparkDriver {
 
   public static final String DEFAULT_EXTRACTORS = "defaultExtractors";
@@ -29,8 +27,7 @@ public class SqoopSparkDriver {
 
   private static final Log LOG = LogFactory.getLog(SqoopSparkDriver.class.getName());
 
-  public static void execute(JobRequest request, SparkConf conf, JavaSparkContext sc)
-      throws Exception {
+  public static void execute(JobRequest request, SparkConf conf, JavaSparkContext sc) throws Exception {
 
     LOG.info("Executing sqoop spark job");
 

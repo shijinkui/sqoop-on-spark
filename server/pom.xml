@@ -16,11 +16,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-
   <parent>
     <groupId>org.apache</groupId>
     <artifactId>sqoop</artifactId>
@@ -37,73 +36,59 @@ limitations under the License.
       <groupId>org.apache.sqoop</groupId>
       <artifactId>sqoop-core</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.apache.sqoop</groupId>
       <artifactId>sqoop-tools</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.apache.sqoop</groupId>
       <artifactId>sqoop-common</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.apache.sqoop</groupId>
       <artifactId>sqoop-security</artifactId>
     </dependency>
-    
-     <dependency>
+    <dependency>
       <groupId>org.apache.sqoop.submission</groupId>
       <artifactId>sqoop-submission-spark</artifactId>
     </dependency>
-
-     <dependency>
+    <dependency>
       <groupId>org.apache.sqoop.submission</groupId>
       <artifactId>sqoop-submission-mapreduce</artifactId>
     </dependency>
-    
     <dependency>
       <groupId>org.apache.sqoop.repository</groupId>
       <artifactId>sqoop-repository-common</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.apache.sqoop.repository</groupId>
       <artifactId>sqoop-repository-derby</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.apache.sqoop.connector</groupId>
       <artifactId>sqoop-connector-generic-jdbc</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.apache.sqoop.connector</groupId>
       <artifactId>sqoop-connector-hdfs</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.apache.sqoop.connector</groupId>
       <artifactId>sqoop-connector-kite</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.apache.sqoop.connector</groupId>
       <artifactId>sqoop-connector-kafka</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.eclipse.jetty.orbit</groupId>
       <artifactId>javax.servlet</artifactId>
       <version>3.0.0.v201112011016</version>
     </dependency>
-
-  <dependency>
+    <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-common</artifactId>
-       <scope>provided</scope>
-
+      <scope>provided</scope>
       <exclusions>
         <exclusion>
           <groupId>javax.servlet</groupId>
@@ -111,7 +96,6 @@ limitations under the License.
         </exclusion>
       </exclusions>
     </dependency>
-    
     <dependency>
       <groupId>com.googlecode.json-simple</groupId>
       <artifactId>json-simple</artifactId>
@@ -121,5 +105,4 @@ limitations under the License.
   <build>
     <finalName>sqoop</finalName>
   </build>
-
 </project>

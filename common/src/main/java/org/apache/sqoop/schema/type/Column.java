@@ -6,9 +6,9 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,20 +17,20 @@
  */
 package org.apache.sqoop.schema.type;
 
-import java.io.Serializable;
-
 import org.apache.commons.lang.StringUtils;
 import org.apache.sqoop.classification.InterfaceAudience;
 import org.apache.sqoop.classification.InterfaceStability;
 import org.apache.sqoop.common.SqoopException;
 import org.apache.sqoop.schema.SchemaError;
 
+import java.io.Serializable;
+
 /**
  * Base class for all the supported types in the Sqoop {@link #Schema}
  */
 @InterfaceAudience.Private
 @InterfaceStability.Unstable
-public abstract class Column implements Serializable{
+public abstract class Column implements Serializable {
 
   /**
    * Name of the column. It is optional
@@ -45,7 +45,7 @@ public abstract class Column implements Serializable{
   /**
    * By default a column is nullable
    */
-   public Column(String name) {
+  public Column(String name) {
     this(name, true);
   }
 
@@ -78,11 +78,9 @@ public abstract class Column implements Serializable{
   }
 
   public String toString() {
-    return new StringBuilder()
-      .append("name=").append(name).append(",")
-      .append("nullable=").append(nullable).append(",")
-      .append("type=").append(getType())
-      .toString();
+    return "name=" + name + "," +
+        "nullable=" + nullable + "," +
+        "type=" + getType();
   }
 
   @Override

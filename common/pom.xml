@@ -16,11 +16,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <parent>
     <groupId>org.apache</groupId>
     <artifactId>sqoop</artifactId>
@@ -32,23 +30,14 @@ limitations under the License.
   <name>Sqoop Common</name>
 
   <dependencies>
-    
     <dependency>
       <groupId>com.googlecode.json-simple</groupId>
       <artifactId>json-simple</artifactId>
     </dependency>
-
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <scope>test</scope>
-    </dependency>
-
     <dependency>
       <groupId>commons-lang</groupId>
       <artifactId>commons-lang</artifactId>
     </dependency>
-
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -71,7 +60,8 @@ limitations under the License.
               <target>
                 <mkdir dir="${project.build.directory}/generated-sources/java"/>
                 <exec executable="sh">
-                  <arg line="'${basedir}/src/saveVersion.sh' ${project.version} '${project.build.directory}/generated-sources/java'"/>
+                  <arg
+                      line="'${basedir}/src/saveVersion.sh' ${project.version} '${project.build.directory}/generated-sources/java'"/>
                 </exec>
               </target>
             </configuration>
@@ -110,5 +100,4 @@ limitations under the License.
       </plugin>
     </plugins>
   </build>
-
 </project>

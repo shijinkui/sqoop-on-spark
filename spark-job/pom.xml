@@ -15,11 +15,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
-
   <parent>
     <groupId>org.apache.sqoop</groupId>
     <artifactId>connector</artifactId>
@@ -29,55 +27,47 @@ limitations under the License.
   <groupId>org.apache.sqoop.spark</groupId>
   <artifactId>spark-job</artifactId>
   <name>Sqoop Spark Job</name>
+  <properties>
+    <scala.minor.version>2.11</scala.minor.version>
+    <spark.version>1.6.1</spark.version>
+  </properties>
 
   <dependencies>
-  
     <dependency>
       <groupId>org.apache.sqoop</groupId>
       <artifactId>sqoop-core</artifactId>
     </dependency>
-
-
     <dependency>
       <groupId>org.apache.sqoop.execution</groupId>
       <artifactId>sqoop-execution-spark</artifactId>
+      <version>${project.version}</version>
     </dependency>
-    
-     <dependency>
+    <dependency>
       <groupId>org.apache.sqoop.submission</groupId>
       <artifactId>sqoop-submission-spark</artifactId>
+      <version>${project.version}</version>
     </dependency>
- 
-     <dependency>
-       <groupId>org.apache.spark</groupId>
-       <artifactId>spark-core_2.10</artifactId>
-     </dependency>
-    
-
     <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <scope>test</scope>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-core_${scala.minor.version}</artifactId>
+      <version>${spark.version}</version>
+      <scope>provided</scope>
     </dependency>
-    
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-all</artifactId>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.apache.sqoop</groupId>
       <artifactId>sqoop-core</artifactId>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
     </dependency>
-
   </dependencies>
 
   <build>
@@ -86,9 +76,7 @@ limitations under the License.
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.4</version>
       </plugin>
-
       <!--
         Propagate our build directory to the tests
       -->
@@ -101,7 +89,6 @@ limitations under the License.
           </systemPropertyVariables>
         </configuration>
       </plugin>
-
     </plugins>
   </build>
 </project>

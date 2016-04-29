@@ -32,31 +32,17 @@ limitations under the License.
   <name>Sqoop Generic JDBC Connector</name>
 
   <dependencies>
-
     <dependency>
       <groupId>org.apache.sqoop</groupId>
       <artifactId>connector-sdk</artifactId>
     </dependency>
-
     <dependency>
       <groupId>commons-lang</groupId>
       <artifactId>commons-lang</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.apache.derby</groupId>
       <artifactId>derby</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
     </dependency>
   </dependencies>
 

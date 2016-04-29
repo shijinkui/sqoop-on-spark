@@ -6,9 +6,9 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,15 +16,6 @@
  * limitations under the License.
  */
 package org.apache.sqoop.driver;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 import org.apache.sqoop.common.Direction;
 import org.apache.sqoop.common.DirectionError;
@@ -35,6 +26,9 @@ import org.apache.sqoop.connector.spi.SqoopConnector;
 import org.apache.sqoop.job.etl.Transferable;
 import org.apache.sqoop.model.MSubmission;
 import org.apache.sqoop.utils.ClassUtils;
+
+import java.io.Serializable;
+import java.util.*;
 
 /**
  * Submission details class is used when creating new submission and contains
@@ -167,29 +161,29 @@ public class JobRequest implements Serializable {
 
   public SqoopConnector getConnector(Direction type) {
     switch (type) {
-    case FROM:
-      return fromConnector;
+      case FROM:
+        return fromConnector;
 
-    case TO:
-      return toConnector;
+      case TO:
+        return toConnector;
 
-    default:
-      throw new SqoopException(DirectionError.DIRECTION_0000, "Direction: " + type);
+      default:
+        throw new SqoopException(DirectionError.DIRECTION_0000, "Direction: " + type);
     }
   }
 
   public void setConnector(Direction type, SqoopConnector connector) {
     switch (type) {
-    case FROM:
-      fromConnector = connector;
-      break;
+      case FROM:
+        fromConnector = connector;
+        break;
 
-    case TO:
-      toConnector = connector;
-      break;
+      case TO:
+        toConnector = connector;
+        break;
 
-    default:
-      throw new SqoopException(DirectionError.DIRECTION_0000, "Direction: " + type);
+      default:
+        throw new SqoopException(DirectionError.DIRECTION_0000, "Direction: " + type);
     }
   }
 
@@ -231,53 +225,53 @@ public class JobRequest implements Serializable {
 
   public Object getConnectorLinkConfig(Direction type) {
     switch (type) {
-    case FROM:
-      return fromConnectorLinkConfig;
+      case FROM:
+        return fromConnectorLinkConfig;
 
-    case TO:
-      return toConnectorLinkConfig;
+      case TO:
+        return toConnectorLinkConfig;
 
-    default:
-      throw new SqoopException(DirectionError.DIRECTION_0000, "Direction: " + type);
+      default:
+        throw new SqoopException(DirectionError.DIRECTION_0000, "Direction: " + type);
     }
   }
 
   public void setConnectorLinkConfig(Direction type, Object config) {
     switch (type) {
-    case FROM:
-      fromConnectorLinkConfig = config;
-      break;
-    case TO:
-      toConnectorLinkConfig = config;
-      break;
-    default:
-      throw new SqoopException(DirectionError.DIRECTION_0000, "Direction: " + type);
+      case FROM:
+        fromConnectorLinkConfig = config;
+        break;
+      case TO:
+        toConnectorLinkConfig = config;
+        break;
+      default:
+        throw new SqoopException(DirectionError.DIRECTION_0000, "Direction: " + type);
     }
   }
 
   public Object getJobConfig(Direction type) {
     switch (type) {
-    case FROM:
-      return fromConfig;
+      case FROM:
+        return fromConfig;
 
-    case TO:
-      return toConfig;
+      case TO:
+        return toConfig;
 
-    default:
-      throw new SqoopException(DirectionError.DIRECTION_0000, "Direction: " + type);
+      default:
+        throw new SqoopException(DirectionError.DIRECTION_0000, "Direction: " + type);
     }
   }
 
   public void setJobConfig(Direction type, Object config) {
     switch (type) {
-    case FROM:
-      fromConfig = config;
-      break;
-    case TO:
-      toConfig = config;
-      break;
-    default:
-      throw new SqoopException(DirectionError.DIRECTION_0000, "Direction: " + type);
+      case FROM:
+        fromConfig = config;
+        break;
+      case TO:
+        toConfig = config;
+        break;
+      default:
+        throw new SqoopException(DirectionError.DIRECTION_0000, "Direction: " + type);
     }
   }
 
@@ -291,14 +285,14 @@ public class JobRequest implements Serializable {
 
   public MutableMapContext getConnectorContext(Direction type) {
     switch (type) {
-    case FROM:
-      return fromConnectorContext;
+      case FROM:
+        return fromConnectorContext;
 
-    case TO:
-      return toConnectorContext;
+      case TO:
+        return toConnectorContext;
 
-    default:
-      throw new SqoopException(DirectionError.DIRECTION_0000, "Direction: " + type);
+      default:
+        throw new SqoopException(DirectionError.DIRECTION_0000, "Direction: " + type);
     }
   }
 
@@ -346,7 +340,7 @@ public class JobRequest implements Serializable {
 
   private List<IntermediateDataFormat<?>> rowData = new ArrayList<IntermediateDataFormat<?>>();
 
-  private Map<String, String>  map;
+  private Map<String, String> map;
 
   public void addData(IntermediateDataFormat<?> idf) {
     rowData.add(idf);
