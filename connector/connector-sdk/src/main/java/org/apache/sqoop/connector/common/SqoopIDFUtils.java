@@ -128,9 +128,9 @@ public class SqoopIDFUtils {
 
   public static String toCSVFixedPoint(Object obj, Column column) {
     if (isInteger(column)) {
-      return ((Integer) obj).toString();
+      return obj.toString();
     } else {
-      return ((Long) obj).toString();
+      return obj.toString();
     }
   }
 

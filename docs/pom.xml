@@ -75,16 +75,6 @@ limitations under the License.
             <version>1.0.2</version>
           </plugin>
           <!-- Turning off standard reports as they collide with sphinx -->
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-project-info-reports-plugin</artifactId>
-            <version>2.4</version>
-            <reportSets>
-              <reportSet>
-                <reports></reports>
-              </reportSet>
-            </reportSets>
-          </plugin>
         </plugins>
       </reporting>
     </profile>
